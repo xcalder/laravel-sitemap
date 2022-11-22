@@ -19,8 +19,8 @@
     },
     "require": {
         "php": "^8.0",
-        "illuminate/support": "^8.0",
-        "illuminate/filesystem": "^8.0"
+        "illuminate/support": "^9.0",
+        "illuminate/filesystem": "^9.0"
     },
     "require-dev": {
         "laravel/framework": "^9.0",
