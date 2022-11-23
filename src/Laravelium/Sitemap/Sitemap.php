@@ -425,14 +425,16 @@ class Sitemap
                     // generate new partial sitemap
                     $this->store($format, $filename.'-'.$key, $path, $style);
 
+                    $this->addSitemap($this->model->getLink() .'/'. $filename.'-'.$key.'.'.$fe);
+
                     // add sitemap to sitemapindex
-                    if ($path != null) {
-                        // if using custom path generate relative urls for sitemaps in the sitemapindex
-                        $this->addSitemap($filename.'-'.$key.'.'.$fe);
-                    } else {
-                        // else generate full urls based on app's domain
-                        $this->addSitemap(url($filename.'-'.$key.'.'.$fe));
-                    }
+                    // if ($path != null) {
+                    //     // if using custom path generate relative urls for sitemaps in the sitemapindex
+                    //     $this->addSitemap($filename.'-'.$key.'.'.$fe);
+                    // } else {
+                    //     // else generate full urls based on app's domain
+                    //     $this->addSitemap(url($filename.'-'.$key.'.'.$fe));
+                    // }
                 }
 
                 $data = $this->generate('sitemapindex', $style);
@@ -450,14 +452,16 @@ class Sitemap
                     // generate new partial sitemap
                     $this->store($format, $filename.'-'.$key, $path, $style);
 
+		            $this->addSitemap($this->model->getLink() .'/'. $filename.'-'.$key.'.'.$fe);
+
                     // add sitemap to sitemapindex
-                    if (null != $path) {
-                        // if using custom path generate relative urls for sitemaps in the sitemapindex
-                        $this->addSitemap($filename.'-'.$key.'.'.$fe);
-                    } else {
-                        // else generate full urls based on app's domain
-                        $this->addSitemap(url($filename.'-'.$key.'.'.$fe));
-                    }
+                    // if (null != $path) {
+                    //     // if using custom path generate relative urls for sitemaps in the sitemapindex
+                    //     $this->addSitemap($filename.'-'.$key.'.'.$fe);
+                    // } else {
+                    //     // else generate full urls based on app's domain
+                    //     $this->addSitemap(url($filename.'-'.$key.'.'.$fe));
+                    // }
                 }
 
                 $data = $this->generate('sitemapindex', $style);
